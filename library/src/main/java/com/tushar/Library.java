@@ -28,10 +28,11 @@ public class Library
 
     public void borrowBook(String isbn) {
 
-        Book book = bookInventory.get(isbn);
+    Book book = bookInventory.get(isbn);
 
     bookInventory.remove(isbn);            // Remove from inventory
     borrowedBooks.put(isbn, book);         // Add to borrowed books
+
 }
 
 }

@@ -32,8 +32,12 @@ public class LibraryTest
         Book book = new Book("9780446574724", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997);
         library.addBook(book);
 
-        // Borrowing book here
+    //1. Borrowing book here
         library.borrowBook(book.getISBN());
+
+    // 2.Attempt to borrow the same book again
+        IllegalStateException exception1 = assertThrows(IllegalStateException.class, () -> library.borrowBook(book.getISBN()));
+        assertEquals("Book is already borrowed", exception1.getMessage());
 
 
     }
