@@ -3,6 +3,9 @@ package com.tushar;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+import java.util.Map;
+
 
 public class LibraryTest
 {
@@ -73,4 +76,25 @@ public class LibraryTest
     }
 
 
-}
+    @Test
+    public void testViewAvailableBooks() {
+
+        // add some books to the library
+        Book book1 = new Book("9780446574724", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997);
+        Book book2 = new Book("9780132350884", "The Road", "Cormac McCarthy", 2008);
+
+        library.addBook(book1);
+        library.addBook(book2);
+
+        // View available books
+        List<Book> availableBooks = library.viewAvailableBooks();
+
+        // Print available books
+        for (Book book : availableBooks) {
+            System.out.println("ISBN: " + book.getISBN() + ", Title: " + book.getTitle() +
+                    ", Author: " + book.getAuthor() + ", Year: " + book.getYear());
+        }
+    }
+
+
+    }

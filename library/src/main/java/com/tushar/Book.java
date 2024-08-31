@@ -14,6 +14,7 @@ public class Book {
         this.author = author;
         this.publicationYear = publicationYear;
     }
+
     private void validateRequiredAttributes(String isbn, String title, String author, int publicationYear) {
         validateString(isbn, "ISBN should not be null or empty");
         validateString(title, "Title should not be null or empty");
@@ -28,8 +29,8 @@ public class Book {
             throw new IllegalArgumentException(message);
         }
     }
+
     public String getISBN() {
         return isbn;
     }
-
 }
