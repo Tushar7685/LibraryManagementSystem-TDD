@@ -1,14 +1,19 @@
 package com.tushar;
 
-/**
- * Hello world!
- *
- */
-public class Library 
+import java.util.HashMap;
+import java.util.Map;
+
+public class Library
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        
+    private final Map<String, Book> bookInventory;
+
+    public Library() {
+        this.bookInventory = new HashMap<>();
+    }
+
+    public void addBook(Book book) {
+
+        String isbn = book.getISBN();
+        bookInventory.put(isbn, book);
     }
 }

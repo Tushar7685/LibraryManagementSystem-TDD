@@ -28,5 +28,8 @@ public class Book {
             throw new IllegalArgumentException(message);
         }
     }
+    public String getISBN() {
+        return isbn;
+    }
 
 }
