@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BookTest {
 
-   Book richDadPoorDad = new Book("9781612680194", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 2011);
-
     @Test
     public void testISBNisNull() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Book(null, "Rich Dad Poor Dad", "Robert T. Kiyosaki", 2011));
