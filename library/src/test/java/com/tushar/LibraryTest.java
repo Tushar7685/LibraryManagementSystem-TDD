@@ -51,5 +51,21 @@ public class LibraryTest
         assertEquals("ISBN cannot be null or empty", exception4.getMessage());
     }
 
+    @Test
+    public void testReturnBook() {
+
+        Book book = new Book("9780446574724", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997);
+        library.addBook(book);
+
+        // 1. Borrow the book and then return it
+        library.borrowBook(book.getISBN());
+        library.returnBook(book.getISBN());
+
+    //2. Attempt to return a book that was never borrowed
+        IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> library.returnBook("544554545445"));
+        assertEquals("Book was not borrowed", exception2.getMessage());
+
+    }
+
 
 }
