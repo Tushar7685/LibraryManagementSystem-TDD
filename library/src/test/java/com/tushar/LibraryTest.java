@@ -19,6 +19,10 @@ public class LibraryTest
         Exception exception = assertThrows(IllegalArgumentException.class, () -> library.addBook(null));
         assertEquals("Book should not be null", exception.getMessage());
 
+    //3. test case for adding a book with duplicate ISBN
+        Book duplicateBook = new Book("9781612680194", "Another Book", "Another Author", 2020);
+        Exception duplicateException = assertThrows(IllegalStateException.class, () -> library.addBook(duplicateBook));
+        assertEquals("Book with this ISBN already exists in the library", duplicateException.getMessage());
 
     }
 }

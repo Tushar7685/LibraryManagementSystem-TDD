@@ -17,6 +17,7 @@ public class Library
         }
 
         String isbn = book.getISBN();
+
         bookInventory.put(isbn, book);
     }
 }
