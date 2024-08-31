@@ -39,6 +39,9 @@ public class LibraryTest
         IllegalStateException exception1 = assertThrows(IllegalStateException.class, () -> library.borrowBook(book.getISBN()));
         assertEquals("Book is already borrowed", exception1.getMessage());
 
+    //3. Attempt to borrow a non-existent book
+        IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> library.borrowBook("544554545445"));
+        assertEquals("Book not found", exception2.getMessage());
 
     }
 
