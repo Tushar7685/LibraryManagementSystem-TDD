@@ -9,9 +9,7 @@ import org.junit.Test;
  */
 public class LibraryTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
     public void shouldAnswerWithTrue()
     {
