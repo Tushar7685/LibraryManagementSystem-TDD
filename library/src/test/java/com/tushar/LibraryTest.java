@@ -57,7 +57,6 @@ public class LibraryTest
         Book book = new Book("9780446574724", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997);
         library.addBook(book);
 
-        // 1. Borrow the book and then return it
         library.borrowBook(book.getISBN());
         library.returnBook(book.getISBN());
 

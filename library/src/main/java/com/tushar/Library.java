@@ -46,6 +46,13 @@ public class Library
     }
 
     public void returnBook(String isbn) {
+        Book book = borrowedBooks.get(isbn);
 
+        if (book == null) {
+            throw new IllegalArgumentException("Book was not borrowed");
+        }
+
+        borrowedBooks.remove(isbn);
+        bookInventory.put(isbn, book);
     }
 }
