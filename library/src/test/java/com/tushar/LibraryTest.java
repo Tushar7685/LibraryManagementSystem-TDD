@@ -25,4 +25,18 @@ public class LibraryTest
         assertEquals("Book with this ISBN already exists in the library", duplicateException.getMessage());
 
     }
+
+    @Test
+    public void testBorrowBook() {
+
+        Book book = new Book("9780446574724", "Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997);
+        library.addBook(book);
+
+        // Borrowing book here
+        library.borrowBook(book.getISBN());
+
+
+    }
+
+
 }
