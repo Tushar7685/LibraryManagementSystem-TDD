@@ -59,4 +59,15 @@ public class Library
         bookInventory.put(isbn, book);
     }
 
+
+    public List<Book> viewAvailableBooks() {
+
+
+        List<Book> availableBooks = new ArrayList<>(bookInventory.values());
+        for (Book book : availableBooks) {
+            System.out.println("ISBN: " + book.getISBN() + ", Title: " + book.getTitle() +
+                    ", Author: " + book.getAuthor() + ", Year: " + book.getYear());
+        }
+        return availableBooks;
+    }
     }
