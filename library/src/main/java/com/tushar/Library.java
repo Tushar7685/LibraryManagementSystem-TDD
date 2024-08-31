@@ -6,9 +6,11 @@ import java.util.Map;
 public class Library
 {
     private final Map<String, Book> bookInventory;
+    private final Map<String, Book> borrowedBooks;
 
     public Library() {
         this.bookInventory = new HashMap<>();
+        this.borrowedBooks = new HashMap<>();
     }
 
     public void addBook(Book book) {
@@ -24,6 +26,12 @@ public class Library
         bookInventory.put(isbn, book);
     }
 
+    public void borrowBook(String isbn) {
 
+        Book book = bookInventory.get(isbn);
+
+    bookInventory.remove(isbn);            // Remove from inventory
+    borrowedBooks.put(isbn, book);         // Add to borrowed books
+}
 
 }
